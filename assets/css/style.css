@@ -50,9 +50,9 @@ table {
 	border-spacing: 0;
 }
 /* ------------------------------------------------------------ */
-/*----------------- Header & Navigation Bar -----------------------------*/
+/*----------------- Header & Navigation Bar & Body -----------------------------*/
 header {
-    background-color: #ffffff;
+    background-color: #ecece0;
     position: fixed;
     top: 0;
     height: 60px;
@@ -64,7 +64,6 @@ header {
 #headerDiv {
     position: fixed;
     width: 960px;
-    margin-left: 50px;
     margin-right: 0;
 }
 
@@ -73,6 +72,7 @@ header {
     left: 0;
     justify-content: center;
     height: 60px;
+    padding-left: 100px;
 }
 
 #name {
@@ -119,10 +119,15 @@ li:first-child {
     padding-right: none;
 }
 
+body {
+    background-image: url(../CanineCatch/assets/images/foodBackground.png);
+}
 
 
 /*----------------------- Home Page index.html ---------------- */
-.main {
+#centerDiv {
+    margin: 100px;
     padding: 20px;
-}
+    border: black;
 
+}
