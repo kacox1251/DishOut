@@ -1,4 +1,4 @@
-/* Skip to line 53 <Line 3 - 52 is reset css> */
+Skip to line 53 <Line 3 - 52 is reset css>
 
 /* Reset for page 
 http://meyerweb.com/eric/tools/css/reset/ 
@@ -6,19 +6,87 @@ http://meyerweb.com/eric/tools/css/reset/
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+/* html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -26,32 +94,41 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+HTML5 display-role reset for older browsers
+/* article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
-}
-body {
+} */
+/* body {
 	line-height: 1;
-}
-ol, ul {
+} */
+/* ol, ul {
     list-style: none;
 }
 blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
+    quotes: none; */
+/* } */
+/* blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
 	content: none;
-}
-table {
-    border-collapse: collapse;
+} */
+/* table { */
+    /* border-collapse: collapse;
 	border-spacing: 0;
-}
+} */ 
 /* ------------------------------------------------------------ */
 /*----------------- Header & Navigation Bar & Body -----------------------------*/
-header {
+/* header {
     background-color: #ecece0;
     position: fixed;
     top: 0;
@@ -59,9 +136,9 @@ header {
     width: 100%;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-bottom: #777777, 1px;
-}
+} */
 
-#headerDiv {
+/* #headerDiv {
     position: fixed;
     width: 960px;
     margin-right: 0;
@@ -72,8 +149,8 @@ header {
     left: 0;
     justify-content: center;
     height: 60px;
-    padding-left: 100px;
-}
+    padding-left: 100px; */
+/* }
 
 #name {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -81,24 +158,24 @@ header {
     color: black;
     padding: 20px;
     font-size: 20px;   
-}
+} */
 
-nav {
+/* nav {
     position: absolute;
     color: black;
     right: 0;
     margin-top: 20px;
     margin-bottom: 20px;    
-}
+} */
 
-ul {
+/* ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-}
+} */
 
-li {
+/* li {
     float: right;
     border-right: 1px solid #bbb;
 }
@@ -112,22 +189,28 @@ li a {
     padding-right: 5px;
     padding-left: 5px;
     font: 14px;
-}
+} */
 
-li:first-child {
+/* li:first-child {
     border-right: none;
     padding-right: none;
-}
+} */
+
 
 body {
-    background-image: url(../images/foodBackground.png);
+	background-image: url(images/foodBackground.png);
 }
-
+.right {
+	padding-top: 6px;
+}
+.brand-logo {
+	padding-top: 6px;
+	margin-left: 10px;
+}
 
 /*----------------------- Home Page index.html ---------------- */
-#centerDiv {
-    margin: 100px;
-    padding: 20px;
-    border: black;
-
-}
+/* #centerDiv {
+	margin: 100px;
+	padding: 20px;
+	border: black; */
+/* } */
