@@ -8,7 +8,6 @@
     <title>DishOut - Home Page</title>
     <!-- <script src="Placeholder for CSS Framework & API's"-->
     <link rel="stylesheet" type="text/css" href="../CanineCatch/assets/css/style.css">
-    <script src="lodash.js"></script>
 </head>
 
 <body>
@@ -34,13 +33,7 @@
         <div id="foodPage">
             <div class="row collapse">
                 <div class="large-6 small-6 columns">
-                    <input type="text" id="foodInput" placeholder="Type Your Search Here">
-                </div>
-                <div class="large-3 small-3 columns">
-                    <select>
-                        <option>Recipe Name</option>
-                        <option>Ingredients</option>
-                    </select>
+                    <input type="text" id="foodInput" placeholder="Type Your Ingredients Here">
                 </div>
                 <div class="large-3 small-3 columns">
                     <a href="#" id="searchBtnFood" class="alert button prefix expand">Search</a>
@@ -49,14 +42,7 @@
 
             <!--Food Display-->
             <div id="foodDisplay">
-                <!-- <img id="foodImage" src="placeholder">
-                <h3 id="foodName"></h3>
-                <div id="foodIngred"></div>
-                <div id="foodInstructions"> Description
-                    <!- Once we know what informaiton we will be pulling from the API's
-                            I can build up what this will look like
-                            I will bring some design ideas to Wed's meeting-->
-                <!-- </div> -->
+
             </div>
         </div>
     </div>
@@ -66,6 +52,7 @@
         <!-- If we want to make a nice looking footer or add any additional links here -->
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="./food.js"></script>
