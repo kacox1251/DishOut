@@ -4,29 +4,48 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 		<title>DishOut - Home Page</title>
 		<!-- <script src="Placeholder for CSS Framework & API's"-->
-		<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
-		<script src="lodash.js"></script>
+			<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		
 	</head>
 	<body>
-		<header>
-			<div id="headerDiv">
-				<div id="nameDiv">
-					<h1 id="name">DishOut</h1>
-				</div>
-
-				<nav>
-					<ul>
-						<li><a href="favorite.html">Favorites</a></li>
-						<li><a href="chefsChoice.html">House Special</a></li>
-						<li><a href="drink.html">Drinks</a></li>
-						<li><a href="food.html">Food</a></li>
-						<li><a href="index.html">Home</a></li>
-					</ul>
-				</nav>
+		<nav class="nav-wrapper brown">
+			<div class="container">
+				<a href="#" class="brand-logo">DishOut</a>
+				<a href="#" data-target="slide-out" class="sidenav-trigger">
+					<i class="material-icons">menu</i>
+				</a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="food.html">Food</a></li>
+					<li><a href="drink.html">Drinks</a></li>
+					<li><a href="houseSpecial.html">House Special</a></li>
+					<li><a href="favorite.html">Favorites</a></li>
+				</ul>
 			</div>
-		</header>
+		</nav>
+		<ul class="sidenav" id="slide-out">
+			<li><a href="food.html">Food</a></li>
+			<li><a href="drink.html">Drinks</a></li>
+			<li><a href="houseSpecial.html">House Special</a></li>
+			<li><a href="favorite.html">Favorites</a></li>
+		</ul>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('.sidenav').sidenav();
+			});
+		</script>
 
 		<div id="centerDiv">
 			<div id="drinkPage">
@@ -47,18 +66,6 @@
 
 				<div id="drinkDisplay">
 					<img src="placeholder" />
-					<p>
-						Description
-						<!-- Once we know what informaiton we will be pulling from the API's
-                        I can build up what this will look like
-                        I will bring some design ideas to Wed's meeting-->
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<footer>
-			<!-- If we want to make a nice looking footer or add any additional links here -->
-		</footer>
+					
 	</body>
 </html>
