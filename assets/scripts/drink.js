@@ -1,5 +1,4 @@
 var apiKey = "9973533";
-var nameQueryURL = `https://www.thecocktaildb.com/api/json/v2/${apiKey}/search.php?s=margarita`;
 
 //initial cocktail name search
 $("#searchRecipes").on("click", function() {
@@ -15,47 +14,30 @@ $("#searchRecipes").on("click", function() {
         method: "GET"
     }).then(function(response){
         console.log(response);
-        //use lodash .shuffle to randomize results array
-        var mixed = _.shuffle(response.drinks);
-        var limit = _.slice(mixed, [start=0], [end=9]);
-        console.log(limit);
-        //limit response to 10 drinks
+        var resultsRandom = _.shuffle(response.drinks);
+        var resultsLimit = _.slice(resultsRandom, [start=0], [end=9]);
+        console.log(resultsLimit);
         if (response.drinks === "None Found") {
             alert("try again");
         }
         else {
-                            //   <div class="card">
-                            //     <div class="card-image waves-effect waves-block waves-light">
-                            //       <img class="activator" src="images/office.jpg">
-                            //     </div>
-                            //     <div class="card-content">
-                            //       <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                            //       <p><a href="#">This is a link</a></p>
-                            //     </div>
-                            //     <div class="card-reveal">
-                            //       <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                            //       <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                            //     </div>
-                            //   </div>
-            //create for loop to run through array of drinks
-            for (var i = 0; i <= limit.length; i++) {
-                //create a div to hold both the img and the name
+            for (var i = 0; i <= resultsLimit.length; i++) {
                 var drinkCard = $("<div>");
-                drinkCard.addClass("card");
-                drinkCard.attr("data-drink-id", limit[i].idDrink);
+                drinkCard.addClass("card card-resize");
+                drinkCard.attr("data-drink-id", resultsLimit[i].idDrink);
                 
                 var drinkThumbDiv = $("<div>");
                 drinkThumbDiv.addClass("card-image waves-effect waves-block waves-light")
                 var drinkThumb = $("<img>");
                 drinkThumb.addClass("activator");
-                drinkThumb.attr("src", limit[i].strDrinkThumb);
+                drinkThumb.attr("src", resultsLimit[i].strDrinkThumb);
                 drinkThumbDiv.append(drinkThumb);
                 
                 var drinkNameDiv = $("<div>");
                 drinkNameDiv.addClass("card-content");
                 var drinkName = $("<span>");
                 drinkName.addClass("card-title activator grey-text text-darken-4");
-                drinkName.text(limit[i].strDrink);                
+                drinkName.text(resultsLimit[i].strDrink);                
                 var recipeButton = $("<i>");
                 recipeButton.addClass("material-icons right");
                 recipeButton.text("more_vert");
@@ -66,12 +48,12 @@ $("#searchRecipes").on("click", function() {
                 recipeReveal.addClass("card-reveal");
                 var recipeInfo = $("<span>");
                 recipeInfo.addClass("card-title activator grey-text text-darken-4");
-                var recipeButton = $("<i>");
-                recipeButton.addClass("material-icons right");
-                recipeButton.text("close");
+                var closeRecipe = $("<i>");
+                closeRecipe.addClass("material-icons right");
+                closeRecipe.text("close");
                 var recipeDetails = $("<p>");
                 recipeDetails.text("recipe");
-                recipeInfo.append(recipeButton);
+                recipeInfo.append(closeRecipe);
                 recipeReveal.append(recipeInfo);
                 recipeReveal.append(recipeDetails);
                 
@@ -81,35 +63,33 @@ $("#searchRecipes").on("click", function() {
                 drinkCard.append(recipeReveal);
                 $("#drinkDisplay").append(drinkCard);
                 console.log("it's working")
+
+
+                $.ajax({
+                    url: nameQueryURL,
+                    method: "GET"
+                }).then(function(response){
+                    console.log(response);
+                    // $.each(response.drinks[0], function(key){
+                    //     if (key.indexOf["strIngredient"] !== -1) {
+                    //         console.log(key);
+                    //     }
+                    // });
+                    var ingredientCount = 0;
+
+                    for (var i = 1; i < 16; i++) {
+                        var objKey = `strIngredient${i}`;
+                        // console.log(response.drinks[0][objKey]);
+
+                        if (response.drinks[0][objKey]) {
+                            ingredientCount++;
+                        }
+                    }
+                    console.log(ingredientCount);
+                });
             }
         }
     });
-});
-    
-//cocktail details call
-//
-$("#cocktail-name")
-$.ajax({
-    url: nameQueryURL,
-    method: "GET"
-}).then(function(response){
-    console.log(response);
-    // $.each(response.drinks[0], function(key){
-    //     if (key.indexOf["strIngredient"] !== -1) {
-    //         console.log(key);
-    //     }
-    // });
-    var ingredientCount = 0;
-
-    for (var i = 1; i < 16; i++) {
-        var objKey = `strIngredient${i}`;
-        // console.log(response.drinks[0][objKey]);
-
-        if (response.drinks[0][objKey]) {
-            ingredientCount++;
-        }
-    }
-    console.log(ingredientCount);
 });
 
 //user inputs ingredient into search bar
