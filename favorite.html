@@ -1,20 +1,5 @@
 <!DOCTYPE html> 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DishOut - Home Page</title>
-    <!-- <script src="Placeholder for CSS Framework & API's"-->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
-
-<body>
-    <header>
-        <div id="headerDiv">
-            <div id="nameDiv">
-                <h1 id="name">DishOut</h1>
-            </div>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,6 +24,7 @@
 					<i class="material-icons">menu</i>
 				</a>
 				<ul class="right hide-on-med-and-down">
+					<li><a href="index.html">Home</a></li>
 					<li><a href="food.html">Food</a></li>
 					<li><a href="drink.html">Drinks</a></li>
 					<li><a href="houseSpecial.html">House Special</a></li>
@@ -47,29 +33,31 @@
 			</div>
 		</nav>
 		<ul class="sidenav" id="slide-out">
+			<li><a href="index.html">Home</a></li>
 			<li><a href="food.html">Food</a></li>
 			<li><a href="drink.html">Drinks</a></li>
 			<li><a href="houseSpecial.html">House Special</a></li>
 			<li><a href="favorite.html">Favorites</a></li>
 		</ul>
         
-    <div id="centerDiv">
-        <div id="favoritesDisplay">
-            
-            </div>
+ 
+	<div id="favoritesDisplay">
+	
+	</div>
 
 
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            <script>
-            $(document).ready(function() {
-              $('.sidenav').sidenav();
-            });
-            <script src="lodash.js"></script>
-            <script src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-            <script src="./food.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$('.sidenav').sidenav();
+	});
+	<script src="lodash.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"
+	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="./food.js"></script>
+	<script src="assets/scripts/drink.js"></script>
+	<script src="assets/scripts/food.js"></script>
             
 </body>
 </html>
-
