@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -14,8 +13,10 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-		<title>House Special</title>
-
+		<title>DishOut - Home Page</title>
+		
+	</head>
+	<body>
 		<nav class="nav-wrapper brown">
 			<div class="container">
 				<a href="#" class="brand-logo">DishOut</a>
@@ -23,6 +24,7 @@
 					<i class="material-icons">menu</i>
 				</a>
 				<ul class="right hide-on-med-and-down">
+					<li><a href="index.html">Home</a></li>
 					<li><a href="food.html">Food</a></li>
 					<li><a href="drink.html">Drinks</a></li>
 					<li><a href="houseSpecial.html">House Special</a></li>
@@ -31,16 +33,21 @@
 			</div>
 		</nav>
 		<ul class="sidenav" id="slide-out">
+			<li><a href="index.html">Home</a></li>
 			<li><a href="food.html">Food</a></li>
 			<li><a href="drink.html">Drinks</a></li>
 			<li><a href="houseSpecial.html">House Special</a></li>
 			<li><a href="favorite.html">Favorites</a></li>
 		</ul>
-	</head>
-	<body>
-		<!-- <footer> -->
-		<!-- If we want to make a nice looking footer or add any additional links here -->
-		<!-- </footer> -->
+	
+		<div id="randomDiv">
+			<div id="randomFood">
+
+			</div>
+			<div id="randomDrink">
+	
+			</div>	
+		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script>
@@ -48,5 +55,10 @@
 				$('.sidenav').sidenav();
 			});
 		</script>
+			<script src="https://code.jquery.com/jquery-3.4.1.js"
+			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+			<script src="./food.js"></script>
+			<script src="assets/scripts/drink.js"></script>
+			<script src="assets/scripts/food.js"></script>
 	</body>
 </html>
