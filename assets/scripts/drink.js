@@ -62,31 +62,32 @@ $("#searchRecipes").on("click", function() {
                 drinkCard.append(drinkNameDiv);
                 drinkCard.append(recipeReveal);
                 $("#drinkDisplay").append(drinkCard);
-                console.log("it's working")
+                
+                var drinkId = drinkCard.attr("data-drink-id");
+                var nameQueryURL = `https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${drinkId}`;
+                console.log(nameQueryURL);
+                // $.ajax({
+                //     url: nameQueryURL,
+                //     method: "GET"
+                // }).then(function(response){
+                //     console.log(response);
+                //     // $.each(response.drinks[0], function(key){
+                //     //     if (key.indexOf["strIngredient"] !== -1) {
+                //     //         console.log(key);
+                //     //     }
+                //     // });
+                //     var ingredientCount = 0;
 
+                //     for (var i = 1; i < 16; i++) {
+                //         var objKey = `strIngredient${i}`;
+                //         // console.log(response.drinks[0][objKey]);
 
-                $.ajax({
-                    url: nameQueryURL,
-                    method: "GET"
-                }).then(function(response){
-                    console.log(response);
-                    // $.each(response.drinks[0], function(key){
-                    //     if (key.indexOf["strIngredient"] !== -1) {
-                    //         console.log(key);
-                    //     }
-                    // });
-                    var ingredientCount = 0;
-
-                    for (var i = 1; i < 16; i++) {
-                        var objKey = `strIngredient${i}`;
-                        // console.log(response.drinks[0][objKey]);
-
-                        if (response.drinks[0][objKey]) {
-                            ingredientCount++;
-                        }
-                    }
-                    console.log(ingredientCount);
-                });
+                //         if (response.drinks[0][objKey]) {
+                //             ingredientCount++;
+                //         }
+                //     }
+                //     console.log(ingredientCount);
+                // });
             }
         }
     });
