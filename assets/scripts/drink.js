@@ -1,5 +1,4 @@
 var apiKey = "9973533";
-var nameQueryURL = `https://www.thecocktaildb.com/api/json/v2/${apiKey}/search.php?s=margarita`;
 
 //initial cocktail name search
 $("#searchRecipes").on("click", function() {
@@ -15,66 +14,82 @@ $("#searchRecipes").on("click", function() {
         method: "GET"
     }).then(function(response){
         console.log(response);
-        //use lodash .shuffle to randomize results array
-        var mixed = _.shuffle(response.drinks);
-        var limit = _.slice(mixed, [start=0], [end=9]);
-        console.log(limit);
-        //limit response to 10 drinks
+        var resultsRandom = _.shuffle(response.drinks);
+        var resultsLimit = _.slice(resultsRandom, [start=0], [end=9]);
+        console.log(resultsLimit);
         if (response.drinks === "None Found") {
             alert("try again");
         }
         else {
-            //create for loop to run through array of drinks
-            for (var i = 0; i <= limit.length; i++) {
-            //create a div to hold both the img and the name
-            var drinkDiv = $("<div>");
-            var drinkThumb = $("<img>");
-            var drinkName = $("<h5>");
-            var recipeBtn = $("<button>");
-            //give the div an attr called data-drink-id and give responose.id
-            drinkDiv.attr("data-drink-id", limit[i].idDrink);
-            //change img src to response.drink[i].strDrinkThumb
-            drinkThumb.attr("src", limit[i].strDrinkThumb);
-            //change name text to response.drink[i].strDrink
-            drinkName.text(limit[i].strDrink);
-            //there will be a button to search the drink id or cocktail name
-            //give button class
-            recipeBtn.text("recipe");
-            //append all things to drinkDiv, then append to $("#drinkDisplay")
-            drinkDiv.append(drinkThumb);
-            drinkDiv.append(drinkName);
-            drinkDiv.append(recipeBtn);
-            $("#drinkDisplay").append(drinkDiv);
-            console.log("it's working")
+            for (var i = 0; i <= resultsLimit.length; i++) {
+                var drinkCard = $("<div>");
+                drinkCard.addClass("card card-resize");
+                drinkCard.attr("data-drink-id", resultsLimit[i].idDrink);
+                
+                var drinkThumbDiv = $("<div>");
+                drinkThumbDiv.addClass("card-image waves-effect waves-block waves-light")
+                var drinkThumb = $("<img>");
+                drinkThumb.addClass("activator");
+                drinkThumb.attr("src", resultsLimit[i].strDrinkThumb);
+                drinkThumbDiv.append(drinkThumb);
+                
+                var drinkNameDiv = $("<div>");
+                drinkNameDiv.addClass("card-content");
+                var drinkName = $("<span>");
+                drinkName.addClass("card-title activator grey-text text-darken-4");
+                drinkName.text(resultsLimit[i].strDrink);                
+                var recipeButton = $("<i>");
+                recipeButton.addClass("material-icons right");
+                recipeButton.text("more_vert");
+                drinkName.append(recipeButton);
+                drinkNameDiv.append(drinkName);
+                
+                var recipeReveal = $("<div>");
+                recipeReveal.addClass("card-reveal");
+                var recipeInfo = $("<span>");
+                recipeInfo.addClass("card-title activator grey-text text-darken-4");
+                var closeRecipe = $("<i>");
+                closeRecipe.addClass("material-icons right");
+                closeRecipe.text("close");
+                var recipeDetails = $("<p>");
+                recipeDetails.text("recipe");
+                recipeInfo.append(closeRecipe);
+                recipeReveal.append(recipeInfo);
+                recipeReveal.append(recipeDetails);
+                
+                //append all things to drinkDiv, then append to $("#drinkDisplay")
+                drinkCard.append(drinkThumbDiv);
+                drinkCard.append(drinkNameDiv);
+                drinkCard.append(recipeReveal);
+                $("#drinkDisplay").append(drinkCard);
+                console.log("it's working")
+
+
+                $.ajax({
+                    url: nameQueryURL,
+                    method: "GET"
+                }).then(function(response){
+                    console.log(response);
+                    // $.each(response.drinks[0], function(key){
+                    //     if (key.indexOf["strIngredient"] !== -1) {
+                    //         console.log(key);
+                    //     }
+                    // });
+                    var ingredientCount = 0;
+
+                    for (var i = 1; i < 16; i++) {
+                        var objKey = `strIngredient${i}`;
+                        // console.log(response.drinks[0][objKey]);
+
+                        if (response.drinks[0][objKey]) {
+                            ingredientCount++;
+                        }
+                    }
+                    console.log(ingredientCount);
+                });
             }
         }
     });
-});
-    
-//cocktail details call
-//
-$("#cocktail-name")
-$.ajax({
-    url: nameQueryURL,
-    method: "GET"
-}).then(function(response){
-    console.log(response);
-    // $.each(response.drinks[0], function(key){
-    //     if (key.indexOf["strIngredient"] !== -1) {
-    //         console.log(key);
-    //     }
-    // });
-    var ingredientCount = 0;
-
-    for (var i = 1; i < 16; i++) {
-        var objKey = `strIngredient${i}`;
-        // console.log(response.drinks[0][objKey]);
-
-        if (response.drinks[0][objKey]) {
-            ingredientCount++;
-        }
-    }
-    console.log(ingredientCount);
 });
 
 //user inputs ingredient into search bar
