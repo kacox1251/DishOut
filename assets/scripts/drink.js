@@ -24,28 +24,63 @@ $("#searchRecipes").on("click", function() {
             alert("try again");
         }
         else {
+                            //   <div class="card">
+                            //     <div class="card-image waves-effect waves-block waves-light">
+                            //       <img class="activator" src="images/office.jpg">
+                            //     </div>
+                            //     <div class="card-content">
+                            //       <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+                            //       <p><a href="#">This is a link</a></p>
+                            //     </div>
+                            //     <div class="card-reveal">
+                            //       <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                            //       <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                            //     </div>
+                            //   </div>
             //create for loop to run through array of drinks
             for (var i = 0; i <= limit.length; i++) {
-            //create a div to hold both the img and the name
-            var drinkDiv = $("<div>");
-            var drinkThumb = $("<img>");
-            var drinkName = $("<h5>");
-            var recipeBtn = $("<button>");
-            //give the div an attr called data-drink-id and give responose.id
-            drinkDiv.attr("data-drink-id", limit[i].idDrink);
-            //change img src to response.drink[i].strDrinkThumb
-            drinkThumb.attr("src", limit[i].strDrinkThumb);
-            //change name text to response.drink[i].strDrink
-            drinkName.text(limit[i].strDrink);
-            //there will be a button to search the drink id or cocktail name
-            //give button class
-            recipeBtn.text("recipe");
-            //append all things to drinkDiv, then append to $("#drinkDisplay")
-            drinkDiv.append(drinkThumb);
-            drinkDiv.append(drinkName);
-            drinkDiv.append(recipeBtn);
-            $("#drinkDisplay").append(drinkDiv);
-            console.log("it's working")
+                //create a div to hold both the img and the name
+                var drinkCard = $("<div>");
+                drinkCard.addClass("card");
+                drinkCard.attr("data-drink-id", limit[i].idDrink);
+                
+                var drinkThumbDiv = $("<div>");
+                drinkThumbDiv.addClass("card-image waves-effect waves-block waves-light")
+                var drinkThumb = $("<img>");
+                drinkThumb.addClass("activator");
+                drinkThumb.attr("src", limit[i].strDrinkThumb);
+                drinkThumbDiv.append(drinkThumb);
+                
+                var drinkNameDiv = $("<div>");
+                drinkNameDiv.addClass("card-content");
+                var drinkName = $("<span>");
+                drinkName.addClass("card-title activator grey-text text-darken-4");
+                drinkName.text(limit[i].strDrink);                
+                var recipeButton = $("<i>");
+                recipeButton.addClass("material-icons right");
+                recipeButton.text("more_vert");
+                drinkName.append(recipeButton);
+                drinkNameDiv.append(drinkName);
+                
+                var recipeReveal = $("<div>");
+                recipeReveal.addClass("card-reveal");
+                var recipeInfo = $("<span>");
+                recipeInfo.addClass("card-title activator grey-text text-darken-4");
+                var recipeButton = $("<i>");
+                recipeButton.addClass("material-icons right");
+                recipeButton.text("close");
+                var recipeDetails = $("<p>");
+                recipeDetails.text("recipe");
+                recipeInfo.append(recipeButton);
+                recipeReveal.append(recipeInfo);
+                recipeReveal.append(recipeDetails);
+                
+                //append all things to drinkDiv, then append to $("#drinkDisplay")
+                drinkCard.append(drinkThumbDiv);
+                drinkCard.append(drinkNameDiv);
+                drinkCard.append(recipeReveal);
+                $("#drinkDisplay").append(drinkCard);
+                console.log("it's working")
             }
         }
     });
