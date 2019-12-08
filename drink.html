@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DishOut - Home Page</title>
     <!-- <script src="Placeholder for CSS Framework & API's"-->
-    <link rel="stylesheet" type="text/css" href="../CanineCatch/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
@@ -29,8 +29,6 @@
 		/>
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 		<title>DishOut - Home Page</title>
-		<!-- <script src="Placeholder for CSS Framework & API's"-->
-			<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 		
 	</head>
 	<body>
@@ -55,52 +53,30 @@
 			<li><a href="favorite.html">Favorites</a></li>
 		</ul>
 
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
-		<script>
-			$(document).ready(function() {
-				$('.sidenav').sidenav();
-			});
-		</script>
-
-    <div id="centerDiv">
-        <div id="drinkPage">
-            <div class="row collapse">
-                <div class="large-6 small-6 columns">
-                    <input type="text" placeholder="Alcohol Type Here">
-                </div>
-                <div class="large-3 small-3 columns">
-                    <select>
-                        <option>Alcohol Type</option>
-                        <option>Ingredient</option>
-                    </select>
-                </div>
-                <div class="large-3 small-3 columns">
-                    <a href="#" class="alert button prefix expand">Search</a>
+        <div id="centerDiv">
+                <div id="drinkPage">
+                    <div class="row collapse">
+                            <div class="large-6 small-6 columns">
+                                <input type="text" placeholder="Type Ingredients Here" id="ingredientInput">
+                            </div>
+                        <div class="large-3 small-3 columns">
+                            <button class="alert button prefix expand" id="searchRecipes">Search</button>
+                        </div>
+                    </div>
+                    <div id="drinkDisplay"></div>
                 </div>
             </div>
-
-            <div id="drinkDisplay">
-                <img src="placeholder">
-                <p>Description
-                    <!-- Once we know what informaiton we will be pulling from the API's
-                        I can build up what this will look like
-                        I will bring some design ideas to Wed's meeting-->
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <!-- If we want to make a nice looking footer or add any additional links here -->
-    </footer>
-
-    <script src="lodash.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="./drink.js"></script>
-
+            
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.sidenav').sidenav();
+		});
+	</script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script src="assets/js/food.js"></script>
+    <script src="assets/js/drink.js"></script>
 </body>
-
 </html>
