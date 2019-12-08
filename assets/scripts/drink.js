@@ -96,4 +96,4 @@ $("#searchRecipes").on("click", function() {
 //user inputs ingredient into search bar
 //click search calls results from the api
     //var for the value of the input to attach to the query url
-//
+//why
