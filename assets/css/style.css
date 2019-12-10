@@ -26,3 +26,14 @@ body {
     background-image: url('../images/foodBackground.png');
 }
 
+.recipe-measurements {
+    float: right;
+    display: inline;
+    width: 50%;
+    
+}
+
+.recipe-ingredients {
+    display: inline;
+    width: 50%;
+}
