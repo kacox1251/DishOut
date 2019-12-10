@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -14,7 +14,6 @@
 		/>
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 		<title>DishOut - Home Page</title>
-		
 	</head>
 	<body>
 		<nav class="nav-wrapper brown">
@@ -42,29 +41,35 @@
 		<div id="centerDiv">
 			<div id="foodPage">
 				<div class="row collapse">
-				<div class="large-6 small-6 columns">
-					<input type="text" placeholder="Type Ingredients Here" id="ingredientInput">
+					<div class="large-6 small-6 columns">
+						<input
+							type="text"
+							placeholder="Type Ingredients Here"
+							id="foodInput"
+						/>
+					</div>
+					<div class="large-3 small-3 columns">
+						<button class="alert button prefix expand" id="searchBtnFood">
+							Search
+						</button>
+					</div>
 				</div>
-				<div class="large-3 small-3 columns">
-					<button class="alert button prefix expand" id="searchRecipes">Search</button>
-				</div>
-				</div>
-				<div id="foodDisplay">
-				</div>
+				<div id="foodDisplay"></div>
 			</div>
 		</div>
-		
-
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"
+		></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script>
 			$(document).ready(function() {
 				$('.sidenav').sidenav();
 			});
 		</script>
-		<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <script src="assets/scripts/food.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+		<script src="assets/scripts/food.js"></script>
 	</body>
 </html>

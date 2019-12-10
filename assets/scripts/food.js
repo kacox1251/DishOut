@@ -3,11 +3,10 @@ function foodSearch () {
    
     // grabs the user input 
     var ingredientInput = $("#foodInput").val();
+    $("#foodDisplay").empty();
     console.log(ingredientInput);
-
     var queryURL = "https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?q=" + ingredientInput + "&ingr=3" + "&app_id=c6c1bf7d" + "&app_key=12b02ed3e74a3ae5b6c1a858ca061803"
     console.log(queryURL);
-
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -19,15 +18,12 @@ function foodSearch () {
         $("#foodDisplay").append(recipeDiv);
         console.log(response);
         var recipe = response.hits;
-
         // grabs recipes randomly from array
         var shuffle = _.shuffle(recipe);
         console.log(shuffle);
-
         // limits the arrays to only display 5 results
         var slice = _.slice(shuffle, [start=0], [end=5]);
         console.log(slice);
-
         // loop through the array of results & display search results
         for (var i = 0; i < slice.length; i++) {
     
@@ -42,19 +38,14 @@ function foodSearch () {
             var foodImageDiv = $("<img>").attr("src", imageURL);
             recipeDiv.append(foodImageDiv);
             console.log(slice[i].recipe.image);
-
             // food ingredients
             var ingredients = slice[i].recipe.ingredients;
-
-            // still working on not displaying text twice
-            // _.uniqBy(slice[i].recipe.ingredients, "text");
-
-            for (var x = 0; x < ingredients.length; x++) {
+            var noTextRepeat = _.uniqBy(ingredients, "text");
+            for (var x = 0; x < noTextRepeat.length; x++) {
                 var foodIngredDiv = $("<div>");
-                foodIngredDiv.append(ingredients[x].text);
+                foodIngredDiv.append(noTextRepeat[x].text);
                 recipeDiv.append(foodIngredDiv);
-            console.log(ingredients[x]);
-
+            console.log(noTextRepeat[x]);
             // directions link
             var directionsLink = slice[i].recipe.shareAs;
             var directionsDiv = $("<a>").attr("href", directionsLink);
@@ -66,9 +57,7 @@ function foodSearch () {
         
     }
         
-
     });
     
 };
-
 $(document).on("click", "#searchBtnFood", foodSearch);
