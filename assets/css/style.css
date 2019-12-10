@@ -1,17 +1,29 @@
 body {
-    background-image: url(images/foodBackground.png);
+	background-image: url(images/foodBackground.png);
 }
 .right {
-    padding-top: 6px;
+	padding-top: 6px;
 }
 .brand-logo {
-    padding-top: 6px;
-    margin-left: 10px;
+	padding-top: 6px;
+	margin-left: 10px;
 }
 body {
-    background-image: url('../images/foodBackground.png');
+	background-image: url('../images/foodBackground.png');
+}
+.center {
+	width: 80%;
+	margin: 20px auto;
 }
 .card-resize {
 	width: 200px;
 }
-
+.lettuce {
+	width: 200px;
+}
+.couple-cooking {
+	width: 200px;
+}
+.berries {
+	width: 200px;
+}
