@@ -1,17 +1,17 @@
 body {
-	background-image: url(images/foodBackground.png);
+    background-image: url(images/foodBackground.png);
 }
 .right {
-	padding-top: 6px;
+    padding-top: 6px;
 }
 .brand-logo {
-	padding-top: 6px;
-	margin-left: 10px;
+    padding-top: 6px;
+    margin-left: 10px;
 }
-
 body {
-	background-image: url('../images/foodBackground.png');
+    background-image: url('../images/foodBackground.png');
 }
 .card-resize {
 	width: 200px;
 }
+
