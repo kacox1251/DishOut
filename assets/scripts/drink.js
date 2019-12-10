@@ -62,6 +62,7 @@ $("#searchRecipes").on("click", function() {
                 drinkCard.append(drinkNameDiv);
                 drinkCard.append(recipeReveal);
                 $("#drinkDisplay").append(drinkCard);
+
             }
                 
                 var drinkId = drinkCard.attr("data-drink-id");
