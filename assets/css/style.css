@@ -1,10 +1,11 @@
 /*---------------------Nav Bar---------------------*/
+
 .right {
-    padding-top: 6px;
+	padding-top: 6px;
 }
 .brand-logo {
-    padding-top: 6px;
-    margin-left: 10px;
+	padding-top: 6px;
+	margin-left: 10px;
 }
 .card-resize {
     width: 38%;
@@ -23,7 +24,11 @@
 }
 
 body {
-    background-image: url('../images/foodBackground.png');
+	background-image: url('../images/foodBackground.png');
+}
+.center {
+	width: 80%;
+	margin: 20px auto;
 }
 
 .recipe-measurements {
@@ -37,3 +42,14 @@ body {
     display: inline;
     width: 50%;
 }
+
+.lettuce {
+	width: 200px;
+}
+.couple-cooking {
+	width: 200px;
+}
+.berries {
+	width: 200px;
+}
+
