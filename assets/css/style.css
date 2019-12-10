@@ -1,6 +1,4 @@
-body {
-    background-image: url(images/foodBackground.png);
-}
+/*---------------------Nav Bar---------------------*/
 .right {
     padding-top: 6px;
 }
@@ -8,10 +6,23 @@ body {
     padding-top: 6px;
     margin-left: 10px;
 }
+.card-resize {
+    width: 38%;
+}
+
+/*-----------------Body----------------------*/
+.centerDiv {
+    margin: 3%;
+}
+
+.pageHeading {
+    position: fixed;
+    left: 38%;
+    padding: 2%;
+    
+}
+
 body {
     background-image: url('../images/foodBackground.png');
-}
-.card-resize {
-	width: 200px;
 }
 
