@@ -150,6 +150,7 @@ $("#searchRecipes").on("click", function() {
 
                         //creates element for the instructions, adds instructions inside
                     var recipeInstructions = $("<p>");
+                    recipeInstructions.addClass("drinkRecipeInstructions");
                     recipeInstructions.text(response.drinks[0].strInstructions);
                     recipeDetailsContainer.append(recipeInstructions);
                     console.log(ingredientCount);
