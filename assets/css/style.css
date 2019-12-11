@@ -7,14 +7,9 @@
 	padding-top: 6px;
 	margin-left: 10px;
 }
-.card-resize {
-    width: 38%;
-}
+
 
 /*-----------------Body----------------------*/
-.centerDiv {
-    margin: 3%;
-}
 
 .pageHeading {
     position: fixed;
@@ -26,19 +21,15 @@
 body {
 	background-image: url('../images/foodBackground.png');
 }
-.center {
-	width: 80%;
-	margin: 20px auto;
-}
 
 .recipe-measurements {
     float: right;
     display: inline;
     width: 50%;
-    
 }
 
 .recipe-ingredients {
+    float: left;
     display: inline;
     width: 50%;
 }

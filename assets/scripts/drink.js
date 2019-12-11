@@ -37,6 +37,7 @@ $("#searchRecipes").on("click", function() {
                     //creates container to hold all recipe info
                 var drinkCard = $("<div>");
                 drinkCard.addClass("card card-resize");
+                drinkCard.addClass("card-panel hoverable");
                 drinkCard.attr("data-drink-id", resultsLimit[i].idDrink);
                 
                     //creates an image container and an image for the drink thumbnails
