@@ -1,5 +1,6 @@
 # DishOut
 
+
 ## Description 
 
 DishOut is an application aimed to help users find recipes for ingredients that have been
@@ -16,14 +17,6 @@ Or users can select our House Special Page to get a random meal and drink recipe
 
 We built this project to challenge ourselves to use and learn new technologies, and to build a 
 solution our user stories.
-
-## Table of Contents
-
-* [Credits](#credits)
-* [License](#license)
-* [Badges](#badges)
-* [Tests](#tests)
-
 
 
 ## Credits
@@ -54,22 +47,6 @@ __Photos:__
         This pattern is downloaded from www.subtlepatterns.com  
     * Index.html Photos 
         Unsplash.com
-
-
-## Badges
-/github/workflow/status/:user/:repo/:workflow
-/github/status/contexts/pulls/:user/:repo/:number
-/coveralls/:vcsType/:user/:repo
-/github/repo-size/:user/:repo
-/github/downloads/:user/:repo/total
-/github/issues-raw/:user/:repo
-/github/issues-closed-raw/:user/:repo
-
-https://img.shields.io/github/commit-activity/m/kacox1251/DishOut
-
-/github/languages/count/:user/:repo
-/github/languages/top/:user/:repo
-/github/license/:user/:repo
 
 
 ## License
