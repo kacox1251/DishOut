@@ -1,8 +1,9 @@
 var apiKey = "9973533";
 
-//initial cocktail name search
+    //initial cocktail name search
 $("#searchRecipes").on("click", function() {
     $("#drinkDisplay").empty();
+
         //creating search term
     var searchValues = $("#ingredientInput").val().trim()
     var ingredientArray = _.split(searchValues, ", ")
@@ -15,18 +16,32 @@ $("#searchRecipes").on("click", function() {
         method: "GET"
     }).then(function(response){
         // console.log(response);
+
+            //randomizing search results and adding a limit
         var resultsRandom = _.shuffle(response.drinks);
         var resultsLimit = _.slice(resultsRandom, [start=0], [end=10]);
         // console.log(resultsLimit);
+        // console.log(response);
+
+            //an if statement to show there is no results
         if (response.drinks === "None Found") {
-            alert("try again");
+            $("#modal1").css("display", "block");
+            $(".modal-close").on("click", function() {
+                $("#modal1").css("display", "none");
+            });
         }
+
+            //when there is results, display them
         else {
             for (var i = 0; i < resultsLimit.length; i++) {
+                    //creates container to hold all recipe info
                 var drinkCard = $("<div>");
                 drinkCard.addClass("card card-resize");
                 drinkCard.attr("data-drink-id", resultsLimit[i].idDrink);
                 
+                    //creates an image container and an image for the drink thumbnails
+                        //adds the styles, sets source attribute to each drink thumbnail url
+                        //attaches to image container
                 var drinkThumbDiv = $("<div>");
                 drinkThumbDiv.addClass("card-image waves-effect waves-block waves-light")
                 var drinkThumb = $("<img>");
@@ -34,6 +49,10 @@ $("#searchRecipes").on("click", function() {
                 drinkThumb.attr("src", resultsLimit[i].strDrinkThumb);
                 drinkThumbDiv.append(drinkThumb);
                 
+                    //creates title element for recipe element and sets title to drink name
+                        //creates an icon to show more information
+                        //adds styling
+                        //attaches everything to title element
                 var drinkNameDiv = $("<div>");
                 drinkNameDiv.addClass("card-content");
                 var drinkName = $("<span>");
@@ -45,6 +64,11 @@ $("#searchRecipes").on("click", function() {
                 drinkName.append(recipeButton);
                 drinkNameDiv.append(drinkName);
                 
+                    //creates the reveal element for the recipe info
+                        //adds a title element with drink name, and recipe element with drink info
+                        //adds icon to show where toclose the reveal element
+                        //adds styles
+                        //attaches everything to reveal element
                 var recipeReveal = $("<div>");
                 recipeReveal.addClass("card-reveal");
                 var recipeInfo = $("<span>");
@@ -59,20 +83,25 @@ $("#searchRecipes").on("click", function() {
                 recipeInfo.append(closeRecipe);
                 recipeReveal.append(recipeInfo);
                 recipeReveal.append(recipeDetails);
-                
+
+                    //adds 3 main elements to the whole recipe container
                 drinkCard.append(drinkThumbDiv);
                 drinkCard.append(drinkNameDiv);
                 drinkCard.append(recipeReveal);
                 $("#drinkDisplay").append(drinkCard);
             }
 
+                //a second call is made for the recipe info
+                    //when the thumbnail or more info icon are clicked
             $(".card").on("click", function() {
                 $(".recipe-details").empty();
+
+                    //creates url for the recipe info uding the drink ID attached to each individual element
                 var drinkId = $(this).attr("data-drink-id");
                 var nameQueryURL = `https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${drinkId}`;
                 // console.log(nameQueryURL);
                 
-
+                    //make the call for recipe info
                 $.ajax({
                     url: nameQueryURL,
                     method: "GET"

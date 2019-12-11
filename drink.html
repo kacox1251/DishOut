@@ -44,11 +44,14 @@
 			<div id="drinkPage">
 				<div class="row collapse">
 					<div class="large-6 small-6 columns">
+						<p>Instructions:</p>
+						<p id="page-instructions">Please separate each ingredient with a comma and a space.</p>
+						<p id="instruction-example">Example: gin, anis, dry vermouth</p>
 						<input
 							type="text"
 							placeholder="Type Ingredients Here"
 							id="ingredientInput"
-			      />
+			      		/>
 					</div>
 					<div class="large-3 small-3 columns">
 						<button class="alert button prefix expand" id="searchRecipes">
@@ -59,7 +62,15 @@
 				<div id="drinkDisplay"></div>
 			</div>
 		</div>
-
+		<div id="modal1" class="modal">
+			<div class="modal-content">
+				<h4>Error: No Results Found</h4>
+				<p>Please try searching something else...</p>
+			</div>
+			<div class="modal-footer">
+				<button class="modal-close waves-effect waves-green btn-flat">Agree</button>
+			</div>
+		</div>
 		<script
 			src="https://code.jquery.com/jquery-3.4.1.min.js"
 			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
