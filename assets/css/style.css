@@ -23,7 +23,7 @@ body {
 }
 
 .drinkRecipeInstructions {
-    display: block;
+    float: left;
 }
 
 .recipe-measurements {
