@@ -22,6 +22,10 @@ body {
 	background-image: url('../images/foodBackground.png');
 }
 
+.drinkRecipeInstructions {
+    display: block;
+}
+
 .recipe-measurements {
     float: right;
     display: inline;
