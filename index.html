@@ -1,45 +1,58 @@
 <!DOCTYPE html> 
 <html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<!-- Materialize -->
-	<link
-		rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
-	<link
-		href="https://fonts.googleapis.com/icon?family=Material+Icons"
-		rel="stylesheet"/>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-	<title>DishOut - Home Page</title>	
-</head>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
-<body>
-	<nav class="nav-wrapper brown">
-		<div class="container">
-			<a href="#" class="brand-logo">DishOut</a>
-			<a href="#" data-target="slide-out" class="sidenav-trigger">
-				<i class="material-icons">menu</i>
-			</a>
-			<ul class="right hide-on-med-and-down">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="food.html">Food</a></li>
-				<li><a href="drink.html">Drinks</a></li>
-				<li><a href="houseSpecial.html">House Special</a></li>
-				<!-- <li><a href="favorite.html">Favorites</a></li> -->
-			</ul>
-		</div>
-	</nav>
-	<ul class="sidenav" id="slide-out">
-		<li><a href="index.html">Home</a></li>
-		<li><a href="food.html">Food</a></li>
-		<li><a href="drink.html">Drinks</a></li>
-		<li><a href="houseSpecial.html">House Special</a></li>
-		<!-- <li><a href="favorite.html">Favorites</a></li> -->
-	</ul>
-  		<div class="center">
-			<h3>Title</h3>
+		<!-- Materialize Links -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="./assets/images/Favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/Favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./assets/images/Favicon/favicon-16x16.png">
+		<link rel="manifest" href="./assets/images/Favicon/site.webmanifest">
+
+		<!-- Title -->
+		<title>DishOut - Home Page</title>	
+	</head>
+
+	<body>
+		<!-- Navigation Bar -->
+		<nav class="nav-wrapper brown">
+			<div class="container">
+				<a href="#" class="brand-logo">DishOut</a>
+				<a href="#" data-target="slide-out" class="sidenav-trigger">
+					<i class="material-icons">menu</i>
+				</a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="food.html">Food</a></li>
+					<li><a href="drink.html">Drinks</a></li>
+					<li><a href="houseSpecial.html">House Special</a></li>
+					<!-- <li><a href="favorite.html">Favorites</a></li> *For Future Development -->
+				</ul>
+			</div>
+		</nav>
+		<!-- Navigation Bar - Materialize Slide out code -->
+		<ul class="sidenav" id="slide-out">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="food.html">Food</a></li>
+			<li><a href="drink.html">Drinks</a></li>
+			<li><a href="houseSpecial.html">House Special</a></li>
+			<!-- <li><a href="favorite.html">Favorites</a></li> *For Future Development -->
+		</ul>
+
+		<!-- Div Container for About Informaiton  -->
+		<div class="container center-align">
+			<h3>DishOut - Welcome to our Home Page</h3>
 			<p>
 				Do you have ingredients gathering dust in your pantry or wetbar? How
 				about something that's about to expire in your fridge? If this is you,
@@ -53,20 +66,20 @@
 			<img class="berries" src="assets/images/berries.jpg" />
 		</div>
 
+		<!-- Script Links -->
 		<script
 			src="https://code.jquery.com/jquery-3.4.1.min.js"
 			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-			crossorigin="anonymous"
-		></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+			crossorigin="anonymous">//jQuery Link </script>
+    
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">//Materialize CSS Framework Link</script>
 		<script>
+			//Materialize JS function for sidebar Nav
 			$(document).ready(function() {
 				$('.sidenav').sidenav();
 			});
 		</script>
-
-		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
-		<script src="assets/scripts/food.js"></script>
-
+    
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js">//LoDash Third-Party API Link</script>
 	</body>
 </html>

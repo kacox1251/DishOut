@@ -28,6 +28,7 @@ function foodSearch () {
             
             var recipeDiv = $("<div>");
             recipeDiv.addClass("card card-resize");
+            recipeDiv.addClass("card-panel hoverable");
             $("#foodDisplay").append(recipeDiv);
 
             // food image
