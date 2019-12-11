@@ -1,22 +1,31 @@
 <!DOCTYPE html> 
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+		<!-- Materialize Links -->
 		<link
 			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-		/>
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
 		<link
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-		<title>DishOut - Home Page</title>
-		
+			rel="stylesheet"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="./assets/images/Favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/Favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./assets/images/Favicon/favicon-16x16.png">
+		<link rel="manifest" href="./assets/images/Favicon/site.webmanifest">
+
+		<!-- Title -->
+		<title>DishOut - House Special</title>
 	</head>
+
 	<body>
+		<!-- Navigation Bar -->
 		<nav class="nav-wrapper brown">
 			<div class="container">
 				<a href="#" class="brand-logo">DishOut</a>
@@ -28,40 +37,46 @@
 					<li><a href="food.html">Food</a></li>
 					<li><a href="drink.html">Drinks</a></li>
 					<li><a href="houseSpecial.html">House Special</a></li>
-					<!-- <li><a href="favorite.html">Favorites</a></li> -->
+					<!-- <li><a href="favorite.html">Favorites</a></li> *For Future Development -->
 				</ul>
 			</div>
 		</nav>
+		<!-- Navigation Bar - Materialize Slide out code -->
 		<ul class="sidenav" id="slide-out">
 			<li><a href="index.html">Home</a></li>
 			<li><a href="food.html">Food</a></li>
 			<li><a href="drink.html">Drinks</a></li>
 			<li><a href="houseSpecial.html">House Special</a></li>
-			<!-- <li><a href="favorite.html">Favorites</a></li> -->
+			<!-- <li><a href="favorite.html">Favorites</a></li> *For Future Development -->
 		</ul>
-	
-		<div id="randomDiv">
-			<div id="randomFood">
 
+		<!-- Div Container for House Special  -->
+		<div class="container">
+			<h3>House Special</h3>
+		
+			<div id="randomDiv" class="container">
+				<div id="randomFood">
+				</div>
+				<div id="randomDrink">
+				</div>	
 			</div>
-			<div id="randomDrink">
-	
-			</div>	
 		</div>
 
+		<!-- Script Links -->
 		<script
-		src="https://code.jquery.com/jquery-3.4.1.min.js"
-		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-		crossorigin="anonymous">
-		</script>
-	
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous">//jQuery Link </script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">//Materialize CSS Framework Link</script>
 		<script>
+			//Materialize JS function for sidebar Nav
 			$(document).ready(function() {
 				$('.sidenav').sidenav();
 			});
 		</script>
-		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
-		<script src="assets/scripts/drink.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js">//LoDash Third-Party API Link</script>
+		<script src="assets/scripts/drink.js">//local js page link</script>
 	</body>
 </html>

@@ -25,6 +25,7 @@ $("#searchRecipes").on("click", function() {
             for (var i = 0; i < resultsLimit.length; i++) {
                 var drinkCard = $("<div>");
                 drinkCard.addClass("card card-resize");
+                drinkCard.addClass("card-panel hoverable");
                 drinkCard.attr("data-drink-id", resultsLimit[i].idDrink);
                 
                 var drinkThumbDiv = $("<div>");

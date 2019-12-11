@@ -26,7 +26,21 @@ function foodSearch () {
         console.log(slice);
         // loop through the array of results & display search results
         for (var i = 0; i < slice.length; i++) {
-    
+            
+            var recipeDiv = $("<div>");
+            recipeDiv.addClass("card card-resize");
+            recipeDiv.addClass("card-panel hoverable");
+            $("#foodDisplay").append(recipeDiv);
+
+            // food image
+            var imageURL = slice[i].recipe.image;
+            var imageDiv = $("<div>");
+            imageDiv.addClass("card-image waves-effect waves-block waves-light");
+            var foodImageDiv = $("<img>").attr("src", imageURL).addClass("activator");
+            imageDiv.append(foodImageDiv);
+            recipeDiv.append(imageDiv);
+            console.log(slice[i].recipe.image);
+
             // food name
             var foodNameDiv = $("<div>");
             foodNameDiv.text(slice[i].recipe.label);
