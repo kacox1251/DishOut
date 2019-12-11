@@ -41,8 +41,6 @@ $("#searchRecipes").on("click", function() {
                 drinkCard.attr("data-drink-id", resultsLimit[i].idDrink);
                 
                     //creates an image container and an image for the drink thumbnails
-                        //adds the styles, sets source attribute to each drink thumbnail url
-                        //attaches to image container
                 var drinkThumbDiv = $("<div>");
                 drinkThumbDiv.addClass("card-image waves-effect waves-block waves-light")
                 var drinkThumb = $("<img>");
@@ -51,9 +49,6 @@ $("#searchRecipes").on("click", function() {
                 drinkThumbDiv.append(drinkThumb);
                 
                     //creates title element for recipe element and sets title to drink name
-                        //creates an icon to show more information
-                        //adds styling
-                        //attaches everything to title element
                 var drinkNameDiv = $("<div>");
                 drinkNameDiv.addClass("card-content");
                 var drinkName = $("<span>");
@@ -66,10 +61,6 @@ $("#searchRecipes").on("click", function() {
                 drinkNameDiv.append(drinkName);
                 
                     //creates the reveal element for the recipe info
-                        //adds a title element with drink name, and recipe element with drink info
-                        //adds icon to show where toclose the reveal element
-                        //adds styles
-                        //attaches everything to reveal element
                 var recipeReveal = $("<div>");
                 recipeReveal.addClass("card-reveal");
                 var recipeInfo = $("<span>");
@@ -92,8 +83,7 @@ $("#searchRecipes").on("click", function() {
                 $("#drinkDisplay").append(drinkCard);
             }
 
-                //a second call is made for the recipe info
-                    //when the thumbnail or more info icon are clicked
+                //a second call is made for the recipe info when the thumbnail or more info icon are clicked
             $(".card").on("click", function() {
                 $(".recipe-details").empty();
 
@@ -112,22 +102,27 @@ $("#searchRecipes").on("click", function() {
                     var ingredientCount = 0;
                     var measureCount = 0;
                     
+                        //creates element for all the recipe info
                     var recipeDetailsContainer = $("#" + drinkId)
                     
+                        //creates an element that says whether or not drink is alcoholic
                     var abv = $("<p>");
                     abv.text(response.drinks[0].strAlcoholic);
                     recipeDetailsContainer.append(abv);
                     abv.addClass("abv");
                     console.log(response.drinks[0].strAlcoholic);
 
+                        //creates the measurements element
                     var measurementDiv = $("<div>");
                     measurementDiv.addClass("recipe-measurements")
                     recipeDetailsContainer.append(measurementDiv);
 
+                        //creates the ingredients element
                     var ingredientDiv = $("<div>");
                     ingredientDiv.addClass("recipe-ingredients")
                     recipeDetailsContainer.append(ingredientDiv);
                     
+                        //creates and calls the list of measurements
                     for (var i = 1; i < 16; i++) {
                         var objKeyMeasure = `strMeasure${i}`;
                         
@@ -140,6 +135,7 @@ $("#searchRecipes").on("click", function() {
                         }
                     }
 
+                        //creates and calls the list of ingredients
                     for (var i = 1; i < 16; i++) {
                         var objKeyIngredient = `strIngredient${i}`;
                         
@@ -152,6 +148,7 @@ $("#searchRecipes").on("click", function() {
                         }
                     }
 
+                        //creates element for the instructions, adds instructions inside
                     var recipeInstructions = $("<p>");
                     recipeInstructions.text(response.drinks[0].strInstructions);
                     recipeDetailsContainer.append(recipeInstructions);
@@ -162,8 +159,3 @@ $("#searchRecipes").on("click", function() {
         }
     });
 });
-
-//user inputs ingredient into search bar
-//click search calls results from the api
-    //var for the value of the input to attach to the query url
-//why
