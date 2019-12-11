@@ -25,11 +25,11 @@ body {
 .recipe-measurements {
     float: right;
     display: inline;
-    width: 49%;
-    
+    width: 50%;
 }
 
 .recipe-ingredients {
+    float: left;
     display: inline;
     width: 50%;
 }
