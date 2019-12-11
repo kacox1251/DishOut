@@ -53,42 +53,40 @@
 
 		<div class="centerDiv container">
 			<div id="drinkPage">
-        <h3>Drinks</h3>
+				<h3>Drinks</h3>
 				<div class="row collapse">
 					<div class="large-6 small-6 columns">
 						<p>Instructions:</p>
 						<p id="page-instructions">Please separate each ingredient with a comma and a space.</p>
 						<p id="instruction-example">Example: gin, anis, dry vermouth</p>
-            <input
-              type="text"
-              placeholder="Type Ingredients Here"
-              id="ingredientInput"
-            />
+						
+						<input
+						type="text"
+						placeholder="Type Ingredients Here"
+						id="ingredientInput"
+						/>
 					</div>
+					<!-- Search Button -->
 					<div class="large-3 small-3 columns">
-						<button class="alert button prefix expand" id="searchRecipes">
+						<button class="waves-effect waves-light btn brown" id="searchRecipes">
 							Search
 						</button>
 					</div>
-				</div>
-				<!-- Search Button -->
-				<div class="large-3 small-3 columns">
-					<button class="alert button prefix expand" id="searchRecipes">
-						Search
-					</button>
 				</div>
 			</div>
 			<!-- Div that drink cards are appended to -->
 			<div id="drinkDisplay" class="container">
 			</div>
 		</div>
+
+		<!-- Search Error Modal  -->
 		<div id="modal1" class="modal">
 			<div class="modal-content">
 				<h4>Error: No Results Found</h4>
 				<p>Please try searching something else...</p>
 			</div>
 			<div class="modal-footer">
-				<button class="modal-close waves-effect waves-green btn-flat">Agree</button>
+				<button class="modal-close waves-effect waves-green btn-flat">Close</button>
 			</div>
 		</div>
 
