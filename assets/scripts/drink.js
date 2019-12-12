@@ -19,7 +19,7 @@ $("#searchRecipes").on("click", function() {
 
             //randomizing search results and adding a limit
         var resultsRandom = _.shuffle(response.drinks);
-        var resultsLimit = _.slice(resultsRandom, [start=0], [end=10]);
+        var resultsLimit = _.slice(resultsRandom, [start=0], [end=5]);
         // console.log(resultsLimit);
         // console.log(response);
 
