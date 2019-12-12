@@ -91,6 +91,7 @@ $("#randomizer").on("click", function() {
 
         var recipeInstructions = $("<p>");
         recipeInstructions.text(response.drinks[0].strInstructions);
+        recipeInstructions.addClass("drinkRecipeInstructions");
         recipeReveal.append(recipeInstructions);
     });
 
@@ -176,6 +177,7 @@ $("#randomizer").on("click", function() {
 
         var recipeInstructions = $("<p>");
         recipeInstructions.text(response.meals[0].strInstructions);
+        recipeInstructions.addClass("drinkRecipeInstructions");
         foodRecipeReveal.append(recipeInstructions);
     });
 });
