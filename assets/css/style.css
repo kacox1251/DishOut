@@ -22,6 +22,10 @@ body {
 	background-image: url('../images/foodBackground.png');
 }
 
+#randomDiv {
+    padding-top: 2%;
+}
+
 .drinkRecipeInstructions {
     float: left;
 }
